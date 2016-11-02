@@ -30,7 +30,6 @@ setup(name='codeforlife-portal',
         'django-cms==3.1.2',
 
         'django-classy-tags==0.6.1',
-        'django-treebeard==3.0',
         'django-sekizai==0.8.2',
         'djangocms-admin-style==0.2.8',
 
