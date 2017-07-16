@@ -58,7 +58,7 @@ def extract_locality(components):
 
         if 'country' in component['types']:
             country = component['short_name']
-    
+
     return town, country
 
 def extract_location_data(results):
@@ -128,7 +128,7 @@ def get_location_from_api(payload):
     except RequestException as e:
         error = 'Request error: %s' % e
 
-    except exceptions.ValueError as e:
+    except ValueError as e:
         error = 'Value error: %s' % e
 
     except ApiException as e:
