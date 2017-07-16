@@ -61,7 +61,7 @@ class EmailBackend(BaseEmailBackend):
     def _send(self, message):
         try:
             message = self._copy_message(message)
-        except (ValueError, aeemail.InvalidEmailError), err:
+        except (ValueError, aeemail.InvalidEmailError) as err:
             import logging
             logging.warn(err)
             if not self.fail_silently:
