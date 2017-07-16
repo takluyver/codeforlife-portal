@@ -61,7 +61,7 @@ class TeachDashboardPage(TeachBasePage):
     def check_organisation_details(self, details):
         correct = True
 
-        first_field = details.items()[0][0]
+        first_field = list(details.items())[0][0]
         self.wait_for_element_by_id('id_' + first_field)
 
         for field, value in details.items():
