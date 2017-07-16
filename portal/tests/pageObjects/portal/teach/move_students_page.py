@@ -35,10 +35,10 @@
 # program; modified versions of the program must be marked as such and not
 # identified as the original program.
 from selenium.webdriver.support.ui import Select
-import class_page
-import move_students_disambiguate_page
+from . import class_page
+from . import move_students_disambiguate_page
 
-from teach_base_page import TeachBasePage
+from .teach_base_page import TeachBasePage
 
 
 class TeachMoveStudentsPage(TeachBasePage):

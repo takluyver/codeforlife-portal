@@ -36,16 +36,16 @@
 # identified as the original program.
 from selenium.webdriver.support.ui import Select
 
-from base_page import BasePage
-import play_page
-import email_verification_needed_page
-from teacher_password_reset_form_page import TeacherPasswordResetFormPage
-from student_password_reset_form_page import StudentPasswordResetFormPage
-import teach.dashboard_page
-import teach.onboarding_organisation_page
-import teach.onboarding_classes_page
-import teach.onboarding_students_page
-import play.dashboard_page
+from .base_page import BasePage
+from . import play_page
+from . import email_verification_needed_page
+from .teacher_password_reset_form_page import TeacherPasswordResetFormPage
+from .student_password_reset_form_page import StudentPasswordResetFormPage
+from . import teach.dashboard_page
+from . import teach.onboarding_organisation_page
+from . import teach.onboarding_classes_page
+from . import teach.onboarding_students_page
+from . import play.dashboard_page
 
 
 class LoginPage(BasePage):

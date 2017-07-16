@@ -126,4 +126,4 @@ class BasePage(object):
         return error in errors
 
 
-import resources_page
+from . import resources_page

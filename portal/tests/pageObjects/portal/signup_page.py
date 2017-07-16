@@ -36,9 +36,9 @@
 # identified as the original program.
 from selenium.webdriver.support.ui import Select
 
-from base_page import BasePage
-import play_page
-import email_verification_needed_page
+from .base_page import BasePage
+from . import play_page
+from . import email_verification_needed_page
 
 
 class SignupPage(BasePage):
@@ -67,7 +67,7 @@ class SignupPage(BasePage):
 
         self.browser.find_element_by_name('student_signup').click()
         if success:
-            from email_verification_needed_page import EmailVerificationNeededPage
+            from .email_verification_needed_page import EmailVerificationNeededPage
             return EmailVerificationNeededPage(self.browser)
         else:
             return self

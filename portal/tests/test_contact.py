@@ -36,9 +36,9 @@
 # identified as the original program.
 from django_selenium_clean import selenium
 
-from base_test import BaseTest
-from pageObjects.portal.home_page import HomePage
-from utils.messages import is_contact_message_sent_message_showing
+from .base_test import BaseTest
+from .pageObjects.portal.home_page import HomePage
+from .utils.messages import is_contact_message_sent_message_showing
 
 
 class TestContact(BaseTest):

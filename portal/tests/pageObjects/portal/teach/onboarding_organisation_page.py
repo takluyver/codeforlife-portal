@@ -36,12 +36,12 @@
 # identified as the original program.
 import time
 
-import onboarding_classes_page
-import onboarding_revoke_request_page
+from . import onboarding_classes_page
+from . import onboarding_revoke_request_page
 
 from selenium.webdriver.support.ui import Select
 
-from teach_base_page import TeachBasePage
+from .teach_base_page import TeachBasePage
 
 
 class OnboardingOrganisationPage(TeachBasePage):

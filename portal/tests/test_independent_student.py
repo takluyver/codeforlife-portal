@@ -46,11 +46,11 @@ from portal.tests.utils.organisation import create_organisation_directly
 from portal.tests.utils.teacher import signup_teacher_directly
 from portal.tests.utils.student import create_school_student_directly
 
-from base_test import BaseTest
-from pageObjects.portal.home_page import HomePage
-from utils.student import create_independent_student, submit_independent_student_signup_form
-from utils.messages import is_email_verified_message_showing
-from utils import email as email_utils
+from .base_test import BaseTest
+from .pageObjects.portal.home_page import HomePage
+from .utils.student import create_independent_student, submit_independent_student_signup_form
+from .utils.messages import is_email_verified_message_showing
+from .utils import email as email_utils
 
 
 class TestIndependentStudent(BaseTest):

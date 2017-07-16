@@ -41,15 +41,15 @@ from selenium.webdriver.support.wait import WebDriverWait
 from django_selenium_clean import selenium
 from django.core import mail
 
-from base_test import BaseTest
-from pageObjects.portal.home_page import HomePage
-from utils.teacher import signup_teacher, signup_teacher_directly, signup_duplicate_teacher_fail
-from utils.organisation import create_organisation_directly
-from utils.classes import create_class_directly
-from utils.student import create_school_student_directly
-from utils.messages import is_email_verified_message_showing, is_teacher_details_updated_message_showing, \
+from .base_test import BaseTest
+from .pageObjects.portal.home_page import HomePage
+from .utils.teacher import signup_teacher, signup_teacher_directly, signup_duplicate_teacher_fail
+from .utils.organisation import create_organisation_directly
+from .utils.classes import create_class_directly
+from .utils.student import create_school_student_directly
+from .utils.messages import is_email_verified_message_showing, is_teacher_details_updated_message_showing, \
     is_teacher_email_updated_message_showing
-from utils import email as email_utils
+from .utils import email as email_utils
 
 
 class TestTeacher(BaseTest):

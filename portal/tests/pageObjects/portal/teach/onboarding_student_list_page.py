@@ -36,8 +36,8 @@
 # identified as the original program.
 from selenium.webdriver.support.ui import Select
 
-from teach_base_page import TeachBasePage
-import class_page
+from .teach_base_page import TeachBasePage
+from . import class_page
 
 
 class OnboardingStudentListPage(TeachBasePage):

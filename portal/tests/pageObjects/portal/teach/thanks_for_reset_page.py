@@ -36,7 +36,7 @@
 # identified as the original program.
 __author__ = 'isabel.richards'
 
-from teach_base_page import TeachBasePage
+from .teach_base_page import TeachBasePage
 
 class ThanksForResetPage(TeachBasePage):
     def __init__(self, browser):

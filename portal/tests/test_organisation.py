@@ -36,18 +36,18 @@
 # identified as the original program.
 from django.core import mail
 
-from base_test import BaseTest
+from .base_test import BaseTest
 from portal.tests.pageObjects.portal.base_page import BasePage
 
 from portal.tests.pageObjects.portal.home_page import HomePage
-from utils.teacher import signup_teacher_directly, generate_details
-from utils.organisation import create_organisation, create_organisation_directly, join_teacher_to_organisation
-from utils.classes import create_class_directly
-from utils.student import create_school_student_directly
-from utils.messages import is_organisation_created_message_showing
+from .utils.teacher import signup_teacher_directly, generate_details
+from .utils.organisation import create_organisation, create_organisation_directly, join_teacher_to_organisation
+from .utils.classes import create_class_directly
+from .utils.student import create_school_student_directly
+from .utils.messages import is_organisation_created_message_showing
 
-from utils.messages import is_teacher_email_updated_message_showing
-from utils import email as email_utils
+from .utils.messages import is_teacher_email_updated_message_showing
+from .utils import email as email_utils
 
 from django_selenium_clean import selenium
 

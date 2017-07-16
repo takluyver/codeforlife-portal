@@ -54,5 +54,5 @@ class PlayBasePage(BasePage):
     def go_to_account_page(self):
         self.browser.find_element_by_id('student_account_button').click()
 
-        from account_page import PlayAccountPage
+        from .account_page import PlayAccountPage
         return PlayAccountPage(self.browser)

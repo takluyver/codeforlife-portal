@@ -35,9 +35,9 @@
 # program; modified versions of the program must be marked as such and not
 # identified as the original program.
 from selenium.webdriver.support.ui import Select
-import edit_student_password_page
+from . import edit_student_password_page
 
-from teach_base_page import TeachBasePage
+from .teach_base_page import TeachBasePage
 
 
 class EditStudentPage(TeachBasePage):

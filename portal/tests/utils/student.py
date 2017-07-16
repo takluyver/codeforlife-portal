@@ -36,7 +36,7 @@
 # identified as the original program.
 from django.core import mail
 
-import email
+from . import email
 
 from portal.models import Class, Student
 

@@ -37,9 +37,9 @@
 
 from django.core.urlresolvers import reverse
 from django.test import TestCase, Client
-from utils.teacher import signup_teacher_directly
-from utils.classes import create_class_directly
-from utils.student import create_school_student_directly
+from .utils.teacher import signup_teacher_directly
+from .utils.classes import create_class_directly
+from .utils.student import create_school_student_directly
 
 
 class TestTeacherViews(TestCase):

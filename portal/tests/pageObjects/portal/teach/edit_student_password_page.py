@@ -36,7 +36,7 @@
 # identified as the original program.
 from selenium.webdriver.support.ui import Select
 
-from teach_base_page import TeachBasePage
+from .teach_base_page import TeachBasePage
 
 
 class EditStudentPasswordPage(TeachBasePage):
