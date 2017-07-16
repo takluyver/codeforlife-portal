@@ -34,6 +34,7 @@
 # copyright notice and these terms. You must not misrepresent the origins of this
 # program; modified versions of the program must be marked as such and not
 # identified as the original program.
+from __future__ import print_function
 import os
 
 from hamcrest import assert_that, equal_to, contains_string
@@ -102,7 +103,7 @@ class GamePage(BasePage):
             import time
             millis = int(round(time.time() * 1000))
             screenshot_filename = '/tmp/game_tests_%s-%s.png' % (os.getenv("BUILD_NUMBER", "nonumber"), str(millis))
-            print "Saved screenshot to " + screenshot_filename
+            print("Saved screenshot to " + screenshot_filename)
             self.browser.get_screenshot_as_file(screenshot_filename)
             raise e
 
