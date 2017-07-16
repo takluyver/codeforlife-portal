@@ -37,7 +37,7 @@
 from django.conf.urls import patterns, include, url
 from rest_framework import status
 from django.http import HttpResponse
-from models import Event
+from .models import Event
 from datetime import datetime
 import json
 import logging
