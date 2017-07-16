@@ -47,7 +47,7 @@ def generate_details(**kwargs):
     title = kwargs.get('title', 'Mr')
     first_name = kwargs.get('first_name', 'Test')
     last_name = kwargs.get('last_name', 'Teacher')
-    email_address = kwargs.get('email_address', 'testteacher%d@codeforlife.com' % random.randint(1, sys.maxint))
+    email_address = kwargs.get('email_address', 'testteacher%d@codeforlife.com' % random.randint(1, sys.maxsize))
     password = kwargs.get('password', 'Password1')
 
     return title, first_name, last_name, email_address, password
