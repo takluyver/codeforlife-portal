@@ -459,7 +459,7 @@ def insert_news2(apps, schema_editor):
 
 class Migration(migrations.Migration):
 
-    replaces = [(b'portal', '0001_initial'), (b'portal', '0002_admin_user'), (b'portal', '0003_school_teacher_relationship'), (b'portal', '0004_class_access_code'), (b'portal', '0005_student_pin'), (b'portal', '0006_teacher_email_verification'), (b'portal', '0007_school_admin'), (b'portal', '0008_auto_20140729_0938'), (b'portal', '0009_remove_student_pin'), (b'portal', '0010_auto_20140729_1030'), (b'portal', '0009_teacher_pending_join_request'), (b'portal', '0011_merge'), (b'portal', '0012_auto_20140729_1359'), (b'portal', '0013_auto_20140730_1100'), (b'portal', '0014_auto_20140730_1459'), (b'portal', '0015_student_pending_class_request'), (b'portal', '0016_emailverification_email'), (b'portal', '0017_school_postcode'), (b'portal', '0018_auto_20140804_1246'), (b'portal', '0019_auto_20140804_1713'), (b'portal', '0020_auto_20140806_1632'), (b'portal', '0020_auto_20140806_1205'), (b'portal', '0021_merge'), (b'portal', '0022_remove_student_name'), (b'portal', '0023_class_classmates_data_viewable'), (b'portal', '0024_auto_20140813_1536'), (b'portal', '0025_trial_users'), (b'portal', '0026_fix_trial_users'), (b'portal', '0027_more_trial_users'), (b'portal', '0028_demoting_max_planck'), (b'portal', '0029_trial_independent_student'), (b'portal', '0030_media_users'), (b'portal', '0031_auto_20140903_1450'), (b'portal', '0032_userprofile_can_view_aggregated_data'), (b'portal', '0033_data_viewing_user'), (b'portal', '0034_data_viewing_user_fix'), (b'portal', '0035_data_viewing_user_hack'), (b'portal', '0036_data_viewing_user_fix'), (b'portal', '0037_userprofile_developer'), (b'portal', '0038_frontpagenews'), (b'portal', '0039_auto_20141109_1827'), (b'portal', '0040_initial_news'), (b'portal', '0041_new_news')]
+    replaces = [(str('portal'), '0001_initial'), (str('portal'), '0002_admin_user'), (str('portal'), '0003_school_teacher_relationship'), (str('portal'), '0004_class_access_code'), (str('portal'), '0005_student_pin'), (str('portal'), '0006_teacher_email_verification'), (str('portal'), '0007_school_admin'), (str('portal'), '0008_auto_20140729_0938'), (str('portal'), '0009_remove_student_pin'), (str('portal'), '0010_auto_20140729_1030'), (str('portal'), '0009_teacher_pending_join_request'), (str('portal'), '0011_merge'), (str('portal'), '0012_auto_20140729_1359'), (str('portal'), '0013_auto_20140730_1100'), (str('portal'), '0014_auto_20140730_1459'), (str('portal'), '0015_student_pending_class_request'), (str('portal'), '0016_emailverification_email'), (str('portal'), '0017_school_postcode'), (str('portal'), '0018_auto_20140804_1246'), (str('portal'), '0019_auto_20140804_1713'), (str('portal'), '0020_auto_20140806_1632'), (str('portal'), '0020_auto_20140806_1205'), (str('portal'), '0021_merge'), (str('portal'), '0022_remove_student_name'), (str('portal'), '0023_class_classmates_data_viewable'), (str('portal'), '0024_auto_20140813_1536'), (str('portal'), '0025_trial_users'), (str('portal'), '0026_fix_trial_users'), (str('portal'), '0027_more_trial_users'), (str('portal'), '0028_demoting_max_planck'), (str('portal'), '0029_trial_independent_student'), (str('portal'), '0030_media_users'), (str('portal'), '0031_auto_20140903_1450'), (str('portal'), '0032_userprofile_can_view_aggregated_data'), (str('portal'), '0033_data_viewing_user'), (str('portal'), '0034_data_viewing_user_fix'), (str('portal'), '0035_data_viewing_user_hack'), (str('portal'), '0036_data_viewing_user_fix'), (str('portal'), '0037_userprofile_developer'), (str('portal'), '0038_frontpagenews'), (str('portal'), '0039_auto_20141109_1827'), (str('portal'), '0040_initial_news'), (str('portal'), '0041_new_news')]
 
 
     dependencies = [
@@ -472,8 +472,8 @@ class Migration(migrations.Migration):
             name='UserProfile',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('avatar', models.ImageField(default=b'static/portal/img/avatars/default-avatar.jpeg', null=True,
-                                             upload_to=b'static/portal/img/avatars/', blank=True)),
+                ('avatar', models.ImageField(default=str('static/portal/img/avatars/default-avatar.jpeg'), null=True,
+                                             upload_to=str('static/portal/img/avatars/'), blank=True)),
                 ('user', models.OneToOneField(to=settings.AUTH_USER_MODEL)),
                 ('awaiting_email_verification', models.BooleanField(default=False)),
                 ('can_view_aggregated_data', models.BooleanField(default=False)),
@@ -497,10 +497,10 @@ class Migration(migrations.Migration):
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('user', models.OneToOneField(to='portal.UserProfile')),
                 (
-                    'pending_join_request', models.ForeignKey(related_name=b'join_request', to='portal.School', null=True)),
+                    'pending_join_request', models.ForeignKey(related_name=str('join_request'), to='portal.School', null=True)),
                 ('is_admin', models.BooleanField(default=False)),
                 ('title', models.CharField(max_length=35)),
-                ('school', models.ForeignKey(related_name=b'teacher_school', to='portal.School', null=True)),
+                ('school', models.ForeignKey(related_name=str('teacher_school'), to='portal.School', null=True)),
             ],
         ),
         migrations.CreateModel(
@@ -512,17 +512,17 @@ class Migration(migrations.Migration):
                 ('classmates_data_viewable', models.BooleanField(default=False)),
                 ('accept_requests_until', models.DateTimeField(null=True)),
                 ('always_accept_requests', models.BooleanField(default=False)),
-                ('teacher', models.ForeignKey(related_name=b'class_teacher', to='portal.Teacher')),
+                ('teacher', models.ForeignKey(related_name=str('class_teacher'), to='portal.Teacher')),
             ],
             options={
-                'verbose_name_plural': b'classes',
+                'verbose_name_plural': str('classes'),
             },
         ),
         migrations.CreateModel(
             name='Student',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
-                ('class_field', models.ForeignKey(related_name=b'students', to='portal.Class', null=True)),
+                ('class_field', models.ForeignKey(related_name=str('students'), to='portal.Class', null=True)),
                 ('user', models.OneToOneField(to='portal.UserProfile')),
                 (
                     'pending_class_request', models.ForeignKey(related_name='class_request', to='portal.Class', null=True)),
@@ -533,7 +533,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=200)),
-                ('children', models.ManyToManyField(to=b'portal.Student')),
+                ('children', models.ManyToManyField(to=str('portal.Student'))),
                 ('user', models.OneToOneField(to='portal.UserProfile')),
             ],
         ),
@@ -544,7 +544,7 @@ class Migration(migrations.Migration):
                 ('token', models.CharField(max_length=30)),
                 ('expiry', models.DateTimeField()),
                 ('used', models.BooleanField(default=False)),
-                ('user', models.ForeignKey(related_name=b'email_verifications', to='portal.UserProfile')),
+                ('user', models.ForeignKey(related_name=str('email_verifications'), to='portal.UserProfile')),
                 ('email', models.CharField(default=None, max_length=200, null=True, blank=True)),
             ],
         ),
