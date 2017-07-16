@@ -41,6 +41,7 @@ import string
 from django.contrib.auth.models import User
 
 from portal.models import Student, Class
+import six
 
 
 def get_random_username():
@@ -56,7 +57,7 @@ def generate_new_student_name(orig_name):
 
     i = 1
     while True:
-        new_name = orig_name + unicode(i)
+        new_name = orig_name + six.text_type(i)
         if not Student.objects.filter(new_user__username=new_name).exists():
             return new_name
         i += 1
