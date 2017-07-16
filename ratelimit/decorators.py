@@ -29,7 +29,7 @@ backend = CacheBackend()
 # increment - a function to decide whether to count this request towards the rate limiting
 def ratelimit(tag, label=None, labeller=None, path=True, ip=True, periods=[], increment=None):
     def decorator(fn):
-        decoded_periods = map(decode_period, periods)
+        decoded_periods = list(map(decode_period, periods))
 
         @wraps(fn)
         def wrapped(request, *args, **kwargs):
