@@ -150,8 +150,8 @@ class Class(models.Model):
 
         """This gets all the students who are logged in."""
         users_status = cache.get(CACHE_USERS)
-        online_users_status = filter(lambda status: status.status == ONLINE, users_status)
-        online_user_ids = map(lambda status: status.user.id, online_users_status)
+        online_users_status = [status for status in users_status if status.status == ONLINE]
+        online_user_ids = [status.user.id for status in online_users_status]
 
         # Query all logged in users based on id list
         return Student.objects.filter(class_field=self).filter(new_user__id__in=online_user_ids)
