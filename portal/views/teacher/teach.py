@@ -82,7 +82,7 @@ def materials_viewer(request, pdf_name):
 
             link_titles.append(link)
 
-        return zip(links, link_titles)
+        return list(zip(links, link_titles))
 
     try:
         title = PDF_DATA[pdf_name]['title']
