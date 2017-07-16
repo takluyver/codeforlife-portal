@@ -60,10 +60,10 @@ def event(request):
                     details=details)
             event.save()
             return HttpResponse("Success", content_type='text/plain', status=status.HTTP_200_OK)
-        except ValueError, e:
+        except ValueError as e:
             logger.error("Failed to parse event: " + str(request.body[0:1000]))
             return HttpResponse("Failed to parse event", content_type='text/plain', status=status.HTTP_400_BAD_REQUEST)
-        except KeyError, e:
+        except KeyError as e:
             logger.error("Missing event attributes: " + str(request.body[0:1000]))
             return HttpResponse("Missing event attributes", content_type='text/plain', status=status.HTTP_400_BAD_REQUEST)
     else:
