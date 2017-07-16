@@ -50,6 +50,7 @@ from .utils.messages import is_teacher_email_updated_message_showing
 from .utils import email as email_utils
 
 from django_selenium_clean import selenium
+from six.moves import range
 
 
 class TestOrganisation(BaseTest, BasePage):

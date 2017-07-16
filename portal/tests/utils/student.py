@@ -39,6 +39,7 @@ from django.core import mail
 from . import email
 
 from portal.models import Class, Student
+from six.moves import range
 
 
 def generate_school_details():
