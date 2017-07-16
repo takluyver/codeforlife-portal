@@ -35,12 +35,11 @@
 # program; modified versions of the program must be marked as such and not
 # identified as the original program.
 import requests
-import exceptions
 
-class RequestException(exceptions.Exception):
+class RequestException(Exception):
     pass
 
-class ApiException(exceptions.Exception):
+class ApiException(Exception):
     pass
 
 def is_GB(component):
